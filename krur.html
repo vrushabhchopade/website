@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roadmap Sequence</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .bg-image {
+            background-image: url('background.jpg');
+            height: 100%;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed; 
+        }
+
+        .bg-image img {
+            transition: transform 0.5s ease-in-out; 
+            width: 70px;
+            height: 70px;
+           border-radius: 50%; /* Pentagon shape */
+        }
+
+        .bg-image img:hover {
+            transform: scale(2); 
+        }
+
+        #level1 {
+            position: absolute;
+            top: 400px;    
+            left: 380px; 
+        }
+
+        #level2 {
+            position: absolute;
+            top: 350px;    
+            left: 1000px; 
+        }
+
+        #level3 {
+            position: absolute;
+            top: 360px;    
+            left: 200px; 
+        }
+
+        #level4 {
+            position: absolute;
+            top: 400px;    
+            left: 1300px; 
+        }
+
+        #level5 {
+            position: absolute;
+            top: 350px;    
+            left: 650px; 
+        }
+
+        .quiz-container {
+            position: absolute;
+            left: 350px;
+            top: 525px;
+            width: 800px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: center;
+            background-image: url('background.jpg');
+        }
+
+        .question {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .options button {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            background-image: url('https://static.vecteezy.com/system/resources/previews/002/485/546/large_2x/old-brown-color-paper-texture-photo.jpg');
+            color: black;
+            border: none;
+            transition: background-color 0.3s ease;
+            width: 200px;
+            height: 50px;
+            clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%); /* Pentagon shape */
+        }
+
+        .options button:hover {
+            background-color: #af1190;
+        }
+
+        .back {
+    width: 100px;  /* Adjusted width for better centering */
+    height: 30px;  /* Adjusted height for better centering */
+    position: absolute;
+    left: 30px;
+    top: 30px;
+    background-color: brown;
+    color: blanchedalmond;
+    padding: 1px 2px;   /* Padding to provide space inside the button */
+    text-align: center;  /* Center the text horizontally */
+    line-height: 30px;  /* Center the text vertically */
+    font-size: 16px;  /* Adjust font size */
+    border: none;  /* Remove border */
+    border-radius: 12px;  /* Rounded corners */
+    cursor: pointer;  /* Change cursor on hover */
+    transition: background-color 0.3s ease, transform 0.3s ease;  /* Smooth transition */
+    
+}
+.back a{
+    color: rgb(255, 217, 0);
+    text-decoration: none;
+
+}
+
+.back:hover {
+    background-color: #45a049;  /* Darker green on hover */
+    transform: scale(1.1);  /* Slightly enlarge the button on hover */
+}
+.next {
+    width: 100px;  /* Adjusted width for better centering */
+    height: 30px;  /* Adjusted height for better centering */
+    position: absolute;
+    left: 1375px;
+    top: 675px;
+    background-color: brown;
+    color: blanchedalmond;
+    padding: 1px 2px;   /* Padding to provide space inside the button */
+    text-align: center;  /* Center the text horizontally */
+    line-height: 30px;  /* Center the text vertically */
+    font-size: 16px;  /* Adjust font size */
+    border: none;  /* Remove border */
+    border-radius: 12px;  /* Rounded corners */
+    cursor: pointer;  /* Change cursor on hover */
+    transition: background-color 0.3s ease, transform 0.3s ease;  /* Smooth transition */
+    
+}
+.next a{
+    color: rgb(255, 217, 0);
+    text-decoration: none;
+
+}
+
+.next:hover {
+    background-color: #45a049;  /* Darker green on hover */
+    transform: scale(1.1);  /* Slightly enlarge the button on hover */
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="bg-image">
+        <img src="img\level1.jpg" width="70" height="70" id="level1">
+        <img src="img\unnamed.png" width="70" height="70" id="level2">
+        <img src="img\unnamed (1).png" width="70" height="70" id="level3">
+        <img src="img\unnamed (2).png" width="50" height="50" id="level4">
+        <img src="img\unnamed (3).png" width="70" height="70" id="level5">
+        <div class="quiz-container">
+            <div class="question" id="question"><b>1] What was the capital of Maratha empire ?</b></div>
+            <ul class="options">
+                <li><button onclick="checkAnswer('A')">A. Raigad </button></li>
+                <li><button onclick="checkAnswer('B')">B. Agra </button></li>
+                <li><button onclick="checkAnswer('C')">C. Satara</button></li>
+                <li><button onclick="checkAnswer('D')">D. Rajgad</button></li>
+            </ul>
+        </div>
+    </div>
+    <div class="back">
+        <a href="index.html">HOME</a>
+    </div>
+    <div class="next">
+        <a href="#">NEXT</a>
+    </div>
+    <script>
+        function checkAnswer(answer) {
+            const correctAnswer = 'A'; // Set the correct answer here
+            if (answer === correctAnswer) {
+                alert('Correct!');
+            } else {
+                alert('Incorrect, try again.');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historic Game Storyline</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e0cbbd; /* Light beige background to give an ancient feel */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('Designer (3).jpeg.jpg'); /* Background image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            flex-direction: column; /* Stack elements vertically */
+            position: relative; /* For absolute positioning of buttons */
+        }
+
+        .container {
+            width: 60%;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding-top: 10px;
+            position: relative;
+        }
+       .editable-section {
+            padding: 40px;
+            font-size: 18px;
+            line-height: 1.6;
+            background-color: #fff5e1; /* Light yellowish background for the editable section */
+            overflow-y: auto;
+            border-radius: 10%;
+        }
+
+        .btn-home, .btn-next, .btn-back {
+            position: absolute;
+            padding: 10px 20px;
+            background-color: #8b4513; /* Dark brown for buttons */
+            color: #fef611;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 30%;
+        }
+
+        .btn-home {
+            top: 20px;
+            left: 20px;
+        }
+
+        .btn-next {
+            bottom: 20px;
+            right: 20px;
+        }
+
+        .btn-back {
+            bottom: 20px;
+            left: 20px;
+        }
+        
+        .btn-home:hover, .btn-next:hover, .btn-back:hover {
+            background-color: #a0522d; /* Slightly lighter brown on hover */
+        }
+        .image-section{
+             margin: 20px;
+             padding: 10px;
+             }
+
+             .image-section img{
+             margin: 20px;
+             padding: 10px;
+             border-radius: 10%;
+              }
+
+              .image-section1:hover{
+                transform: scaleX(1.1);
+              }
+
+    </style>
+</head>
+<body>
+    <button class="btn-home" onclick="location.href='index.html'">Home</button> <!-- Home button -->
+    <div class="container">
+        <div class="image-section">
+            <img src="ignite.jpg" alt="Historic Image" width="300px" height="300px">
+        </div>
+        <div class="editable-section">
+            <p>
+               <b><i><h3>Chhatrapati Shivaji Maharaj did not "win" Raigad Fort through battle but 
+                strategically built and developed it as his capital. Originally known as Rairi, the 
+                fort was seized by Shivaji Maharaj from Chandrarao More, a local chief. He then expanded 
+                and fortified it, making it his capital in 1674 when he was crowned as Chhatrapati. Raigad 
+                Fort served as a stronghold and symbol of Maratha power under his rule.</i></b></h3>
+            </p>
+        </div>
+    </div>
+    <button class="btn-back" onclick="history.back()">Back</button> <!-- Back button -->
+    <button class="btn-next" onclick="location.href='nextpage.html'">Next</button> <!-- Next button -->
+</body>
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Toggle</title>
+<style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-color:  rgb(235, 215, 188); 
+        }
+
+        #container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            position: relative;
+        }
+
+        img {
+            height: 100vh;
+            transition: transform 0.5s ease;
+            position: absolute;
+        }
+
+        #i1 {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        #i2 {
+            right: 0;
+            display: none;
+            transition: transform 0.5s ease;
+        }
+
+        #toggleButton {
+            position: absolute;
+            left:578px;
+            top: 450px;
+            padding: 5px 5px;
+            font-size: 5px;
+            background-color: #6A3F2B;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+           
+        }
+
+#toggleButton:hover {
+    height: 30px;
+    width: 80px;
+    background-color: #8B4513;
+    color: yellow; /* Text color on hover */
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3);
+    line-height: 50px; /* Adjusts vertical alignment on hover */
+}
+        #myText {
+    display: none;
+    position: absolute;
+    bottom: 10px;
+    left: 510px;
+    top: 440px;
+    color: black;
+    background-color: rgb(235, 215, 188); 
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: opacity 0.5s ease;
+    opacity: 0;
+}
+
+#s {
+            
+            text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2), 
+                         4px 4px 6px rgba(0, 0, 0, 0.2), 
+                         6px 6px 9px rgba(0, 0, 0, 0.2); /* Soft 3D shadow */
+            color: #cc4c0b;
+            font-size:50px;
+            
+        }
+       
+
+#toggleButton:hover {
+    height: 40px; /* Adjusted height */
+    width: 120px; /* Adjusted width */
+    background-color: #8B4513;
+    color: yellow; /* Text color on hover */
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3);
+    font-size: 18px; /* Increased font size on hover */
+    background-color: brown;
+    color:yellow;
+    padding: 5px 10px;  /* Padding to provide space inside the button */
+    text-align: center;  /* Center the text horizontally */
+    line-height: 30px;  /* Center the text vertically */
+    font-size: 16px;  /* Adjust font size */
+    border: none;  /* Remove border */
+    border-radius: 12px;  /* Rounded corners */
+    cursor: pointer;  /* Change cursor on hover */
+    transition: background-color 0.3s ease, transform 0.3s ease;  /* Smooth transition */
+}
+
+
+  
+
+
+
+
+
+
+#n1 {
+    width: 100px;  /* Adjusted width for better centering */
+    height: 30px;  /* Adjusted height for better centering */
+    position: absolute;
+    left: 1250px;
+    top: 680px;
+    background-color: brown;
+    color: blanchedalmond;
+    padding: 1px 2px;   /* Padding to provide space inside the button */
+    text-align: center;  /* Center the text horizontally */
+    line-height: 30px;  /* Center the text vertically */
+    font-size: 16px;  /* Adjust font size */
+    border: none;  /* Remove border */
+    border-radius: 12px;  /* Rounded corners */
+    cursor: pointer;  /* Change cursor on hover */
+    transition: background-color 0.3s ease, transform 0.3s ease;  /* Smooth transition */
+    
+}
+
+#n1:hover {
+    background-color: #45a049;  /* Darker green on hover */
+    transform: scale(1.1);  /* Slightly enlarge the button on hover */
+}
+    
+
+        #n2 {
+    width: 100px;  /* Adjusted width for better centering */
+    height: 30px;  /* Adjusted height for better centering */
+    position: absolute;
+    left: 1380px;
+    top: 680px;
+    background-color: brown;
+    color: blanchedalmond;
+    padding: 1px 10px;  /* Padding to provide space inside the button */
+    text-align: center;  /* Center the text horizontally */
+    line-height: 30px;  /* Center the text vertically */
+    font-size: 16px;  /* Adjust font size */
+    border: none;  /* Remove border */
+    border-radius: 12px;  /* Rounded corners */
+    cursor: pointer;  /* Change cursor on hover */
+    transition: background-color 0.3s ease, transform 0.3s ease;  /* Smooth transition */
+}
+
+#n2:hover {
+    background-color: #45a049;  /* Darker green on hover */
+    transform: scale(1.1);  /* Slightly enlarge the button on hover */
+}
+.button a {
+    color: rgb(255, 217, 0);
+    text-decoration: none;
+
+}
+
+.back {
+    width: 100px;  /* Adjusted width for better centering */
+    height: 30px;  /* Adjusted height for better centering */
+    position: absolute;
+    left: 30px;
+    top: 30px;
+    background-color: brown;
+    color: blanchedalmond;
+    padding: 1px 2px;   /* Padding to provide space inside the button */
+    text-align: center;  /* Center the text horizontally */
+    line-height: 30px;  /* Center the text vertically */
+    font-size: 16px;  /* Adjust font size */
+    border: none;  /* Remove border */
+    border-radius: 12px;  /* Rounded corners */
+    cursor: pointer;  /* Change cursor on hover */
+    transition: background-color 0.3s ease, transform 0.3s ease;  /* Smooth transition */
+    
+}
+.back a{
+    color: rgb(255, 217, 0);
+    text-decoration: none;
+
+}
+
+.back:hover {
+    background-color: #45a049;  /* Darker green on hover */
+    transform: scale(1.1);  /* Slightly enlarge the button on hover */
+}
+
+       
+    </style>
+</head>
+<body>
+   
+    <div id="container">
+        <img id="i1" src="img\IMG_20240902_090546.jpg" alt="Image 1">
+        <img id="i2" src="img\IMG_20240831_235325_543.jpg" alt="Image 2">
+        
+        <!-- <div id="but1">RASHTHAN</div> -->
+        <button id="toggleButton" onclick="toggleImages()">MAHARATRA</button>
+        
+        <p id="myText">
+            <b id="s" >SHIVAJI &nbsp;MAHARAJ</b>
+            <br>
+            
+            <em>
+                
+                <b>Birth:</b>
+                <br> 
+                
+                Shivaji Maharaj, born on February 19, 1630, at Shivneri Fort in Maharashtra, 
+                <br>stands as one of India's most revered and legendary figures. He is celebrated 
+                <br>as the founder of the Maratha Empire and is renowned  for his unwavering 
+             
+                <br>
+                <br>
+                <b>Family:</b>
+                <br>
+                 
+                Shivaji Maharaj, the founder of the Maratha Empire, was born into a family 
+                <br>with a rich 
+                cultural and military background. 
+               
+                <br>
+                <br>
+                <!-- <b>Education:</b>
+                <br>
+                
+                Shivaji Maharaj's education was a blend of cultural, military, administrative,
+                <br>which equipped him with the skills needed to establish and lead the
+                <br> Maratha Empire. -->
+                
+                
+                
+                
+                
+            </em>
+        </p>
+        
+    </div>
+   <div class="button">
+        <button id="n1"><a href="gurukul.html">BACK</button></a>
+        <button id="n2"><a href="story.html">NEXT</button></a>
+    
+    </div>
+    <div class="back">
+        <a href="index.html">HOME</a>
+    </div>
+</form>
+<script>
+        function toggleImages() {
+            const img1 = document.getElementById('i1');
+            const img2 = document.getElementById('i2');
+            const text = document.getElementById('myText');
+            const but = document.getElementById('toggleButton');
+            
+            if (img2.style.display === 'none' || img2.style.display === '') {
+                setTimeout(() => {
+                    img2.style.display = 'block';
+                    img2.style.height = '60%';
+                    img2.style.transform = 'translateY(-30%) translateX(-5%)';
+                }, 130); 
+
+                setTimeout(() => {
+                    text.style.display = 'block';
+                    text.style.opacity = 1; 
+                    text.style.transform = 'translateX(100%)';
+                }, 130); 
+                img1.style.transform = 'translateX(-100%)';
+                but.style.display = 'none';
+            } else {
+                img2.style.display = 'none';
+                img1.style.transform = 'translateX(-50%)';
+                text.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
